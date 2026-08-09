@@ -1,0 +1,72 @@
+/* ==== COLORS ==== */ 
+$accent-red-clr: #DB0032
+$primary-text-clr: #262626
+$secondary-text-clr: #5B5B5B
+$card-bg-clr: #FFF9F3
+$card-bg-clr-hover: #FFEAD4
+
+/* ==== BREAKPOINTS ==== */ 
+$sm: 576px
+$md: 768px
+$lg: 1024px
+$xl: 1280px
+
+/* ==== UTILS ==== */ 
+$primary-border: 1px solid #4A4848
+$pill: 75px
+$apple-bezier: cubic-bezier(0, 0, .5, 1)
+$agency-bezier: cubic-bezier(0.25, 0.74, 0.22, 0.99)
+
+/* ==== MIXINS ==== */ 
+@mixin hover-supported
+    @media (hover: hover)
+        &:hover
+            @content
+
+@mixin centered($direction: null)
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @if $direction
+        flex-direction: $direction
+
+@mixin button-base
+    font-weight: 500
+    color: #FFF
+    height: 3rem
+    padding: 0.875rem 1rem
+    @include centered
+    border-radius: 75px
+    border: none
+    outline: none
+    cursor: pointer
+    transition: all 0.2s ease
+
+    &:active
+        transform: scale(0.96)
+
+    &:disabled
+        opacity: 0.3
+        pointer-events: none
+
+    &:focus,
+    &:focus-visible
+        outline: none
+        box-shadow: 0 0 0 2px #FFEAD4
+
+    @media (min-width: $lg)
+        padding-left: 1.5rem
+        padding-right: 1.5rem
+
+    @media (min-width: $xl)
+        min-height: 3.25rem
+
+@mixin button
+    cursor: pointer
+    position: relative
+    background-color: transparent
+
+    .button-content
+        position: relative
+        z-index: 1
