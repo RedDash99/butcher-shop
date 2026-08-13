@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding-right: var(--container-padding);
+  padding-left: var(--container-padding);
+  margin: 0 auto;
+}

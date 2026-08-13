@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.footer_inner {
+    padding: 24px;
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg-clr);
+    display: flex;
+    justify-content: space-between;
+}
+
+.slogan {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--secondary-text-clr);
+    margin-top: 1rem;
+    max-width: 400px;
+}
+
+.footer_right {
+    display: grid;
+}
+
+.phone,
+.maps {
+    font-size: 14px;
+    color: var(--secondary-text-clr);
+}
+
+.author {
+    margin-top: auto;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.author a {
+    color: var(--accent-red-clr);
+    font-weight: 600;
+}

@@ -1,0 +1,32 @@
+.cta {
+    display: grid;
+    justify-content: center;
+    position: relative;
+    padding-top: 60px;
+    margin-top: 64px;
+}
+
+.text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #3C2626;
+    text-align: center;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 32px;
+    min-width: 320px;
+    background-color: var(--accent-red-clr)
+}
+
+.arrow_image {
+    position: absolute;
+    right: 24%;
+}

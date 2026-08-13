@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/app/shared/components/container/Container'
+import CTA from '@/app/shared/components/CTA/CTA'
+import { formatPrice } from '../../utils'
 import { getAllProducts } from '../../products'
 import styles from './ProductsSection.module.sass'
-import { formatPrice } from '../../utils'
 
 export default function ProductsSection() {
   const products = getAllProducts()
@@ -96,7 +97,9 @@ export default function ProductsSection() {
             </Link>
           ))}
         </div>
+
       </Container>
+      <CTA />
     </section>
   )
 }

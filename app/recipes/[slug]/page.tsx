@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getRecipeSlugs, getRecipeBySlug } from '../../lib/recipes'
 import MarkdownRenderer from '@/app/shared/components/MarkdownRenderer'
 import type { Metadata } from 'next'
-import './styles/markdown.sass'
+import '@/styles/markdown.css'
 
 type Props = {
   params: Promise<{ slug: string }>

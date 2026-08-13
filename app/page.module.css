@@ -1,0 +1,46 @@
+.page {
+  width: 100%;
+  flex: 1;
+}
+
+.section {
+  padding-bottom: 1rem;
+}
+
+.section_description {
+  color: var(--secondary-text-clr);
+}
+
+@media (min-width: 576px) {
+  .section {
+    padding-bottom: 1.5rem
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    padding-bottom: 2rem
+  }
+}
+
+.recipes_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.recipe {
+  display: grid;
+  padding: 8px;
+  background-color: var(--card-bg-clr);
+  transition: background-color 0.3s var(--apple-bezier);
+}
+
+.recipe:hover {
+  background-color: var(--card-bg-clr-hover);
+}
+
+.recipe_body {
+  padding: 16px
+}
