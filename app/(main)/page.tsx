@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Container from '@/app/shared/components/container/Container'
-import ProductsSection from './lib/components/productsSection/ProductsSection'
-import { getAllRecipes } from './lib/recipes'
+import Container from '@/components/container/Container'
+import ProductsSection from './_components/productsSection/ProductsSection'
+import { getAllRecipes } from '../lib/recipes'
 import styles from './page.module.css'
 
-export default async function Home() {
+export default async function HomePage() {
   const recipes = getAllRecipes()
 
   return (

@@ -1,4 +1,4 @@
-import ProductsSection from '../lib/components/productsSection/ProductsSection'
+import ProductsSection from '../(main)/_components/productsSection/ProductsSection'
 
 type Props = {
   params: Promise<{ slug: string }>
