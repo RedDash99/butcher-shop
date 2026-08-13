@@ -2,6 +2,11 @@
   "name": "butcher-shop",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Пестрецов Александр",
+    "email": "Pestretzov.Alecksandr2016@yandex.ru",
+    "url": "https://t.me/iNeverBeenInParis"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
