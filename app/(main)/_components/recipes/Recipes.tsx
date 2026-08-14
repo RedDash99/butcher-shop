@@ -2,34 +2,37 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/app/shared/components/container/Container'
 import CTA from '@/app/shared/components/CTA/CTA'
-import { formatPrice } from '@/lib/utils'
-import { getAllProducts } from '@/lib/products'
-import styles from './recipesSection.module.sass'
+import { getAllRecipes } from '@/lib/recipes'
+import styles from './recipes.module.css'
 
-export default function ProductsSection() {
-  const products = getAllProducts()
+export default function Recipes() {
+  const recipes = getAllRecipes()
 
   return (
     <section className={styles.products}>
       <Container>
         <div className={styles.products_header}>
           <div className={styles.products_header_left}>
-            <h2 className={`${styles.section_title} section-title`}>Продукция</h2>
-            <p className={styles.section_description}>
-              От стейков на гриль до бульонных косточек — у нас найдётся мясо на любой бюджет и
-              рецепт. Выбирайте вес, вид разделки и способ упаковки прямо на сайте.
+            <h2 className={`${styles.section_title} section-title`}>Рецепты шашлыка</h2>
+            <p className={`${styles.section_description} section-description`}>
+              На майские праздники десятки тысяч россиян отправятся на первые пикники в этом году. И
+              конечно, главным блюдом на столах станет шашлык. РБК Life рассказывает, как можно
+              приготовить мясо — от способа из СССР до необычных маринадов на гранатовом соке и с
+              протертыми томатами.
             </p>
           </div>
           <div className={styles.products_header_right}>
-            <Link href="/products" className={styles.products_header_link}>Весь ассортимент</Link>
+            <Link href="/recipes" className={styles.products_header_link}>
+              Все рецепты
+            </Link>
           </div>
         </div>
 
         <div className={styles.products_grid}>
-          {products.map((product) => (
-            <Link key={product.slug} href={`/products/${product.slug}`} style={{ display: 'flex' }}>
+          {recipes.map((recipe) => (
+            <Link key={recipe.slug} href={`/recipes/${recipe.slug}`} style={{ display: 'flex' }}>
               <div className={styles.product}>
-                {product.preview && (
+                {recipe.preview && (
                   <div
                     style={{
                       width: '100%',
@@ -38,8 +41,8 @@ export default function ProductsSection() {
                     }}
                   >
                     <Image
-                      src={`/images/products/${product.preview}`}
-                      alt={product.title}
+                      src={`/images/recipes/${recipe.preview}`}
+                      alt={recipe.title}
                       width={340}
                       height={248}
                       style={{
@@ -60,36 +63,34 @@ export default function ProductsSection() {
                       color: '#262626',
                     }}
                   >
-                    {product.title}
+                    {recipe.title}
                   </h2>
 
-                  {product.price && (
+                  {recipe.description && (
                     <p
                       style={{
                         color: '#4b5563',
-                        fontSize: '15px',
+                        fontSize: '0.875rem',
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
-                        marginBottom: '0.25rem',
+                        marginBottom: '0.5rem',
                       }}
                     >
-                      {formatPrice(product.price)}
+                      {recipe.description}
                     </p>
                   )}
-                  {product.weight && (
+
+                  {recipe.date && (
                     <p
                       style={{
-                        color: '#4b5563',
-                        fontSize: '15px',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
+                        color: '#9ca3af',
+                        fontSize: '0.75rem',
+                        marginTop: '0.5rem',
                       }}
                     >
-                      {product.weight}
+                      {new Date(recipe.date).toLocaleDateString()}
                     </p>
                   )}
                 </div>
@@ -97,7 +98,6 @@ export default function ProductsSection() {
             </Link>
           ))}
         </div>
-
       </Container>
       <CTA />
     </section>
