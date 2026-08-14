@@ -30,9 +30,9 @@ export default function Footer() {
             </p>
           </div>
           <div className={styles.footer_right}>
-            <a className={styles.phone} href="tel:+79996299386">+7 (999) 629-93-86</a>
-            <a className={styles.maps} href="https://yandex.ru/maps/-/CTcm50yq">Мы на Яндекс Картах</a>
-            <p className={styles.author}>Разработка сайтов <a href="https://t.me/iNeverBeenInParistps://t.me:@NeverBeenInParis">@NeverBeenInParis</a></p>
+            <a className={`${styles.phone} link`} href="tel:+79996299386">+7 (999) 629-93-86</a>
+            <a className={`${styles.maps} link`} href="https://yandex.ru/maps/-/CTcm50yq">Мы на Яндекс Картах</a>
+            <p className={styles.author}>Разработка сайтов <a className="link" href="https://t.me/iNeverBeenInParistps://t.me:@NeverBeenInParis">@NeverBeenInParis</a></p>
           </div>
         </div>
       </Container>

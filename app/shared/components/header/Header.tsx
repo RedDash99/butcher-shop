@@ -25,19 +25,19 @@ export default function Header() {
                 </Link>
                 <nav className={styles.nav}>
                     <ul className={styles.nav_list}>
-                        <li className={styles.list_item}>
-                            <Link className={styles.list_link} href="/products">Продукция</Link>
+                        <li className={`${styles.list_item} link`}>
+                            <Link className={styles.list_link} href="/catalog">Продукция</Link>
                         </li>
-                        <li className={styles.list_item}>
+                        <li className={`${styles.list_item} link`}>
                             <Link className={styles.list_link} href="/contacts">Контакты</Link>
                         </li>
-                        <li className={styles.list_item}>
+                        <li className={`${styles.list_item} link`}>
                             <Link className={styles.list_link} href="/recipes">Рецепты</Link>
                         </li>
                     </ul>
                 </nav>
                 <div className={styles.phone}>
-                    <a href="tel:+79996299386" className={styles.phone_link}>+7 (999) 629-93-86</a>
+                    <a href="tel:+79996299386" className={`${styles.phone_link} link`}>+7 (999) 629-93-86</a>
                 </div>
             </div>
         </Container>

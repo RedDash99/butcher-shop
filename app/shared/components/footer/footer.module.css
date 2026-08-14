@@ -6,7 +6,7 @@
 .footer_inner {
     padding: 24px;
     margin-bottom: 1.5rem;
-    background-color: var(--card-bg-clr);
+    background-color: var(--block-bg-clr);
     display: flex;
     justify-content: space-between;
 }
@@ -21,13 +21,21 @@
 }
 
 .footer_right {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 8px;
 }
 
 .phone,
 .maps {
     font-size: 14px;
+    font-weight: 500;
     color: var(--secondary-text-clr);
+}
+
+.maps {
+    text-transform: none;
 }
 
 .author {

@@ -6,8 +6,8 @@
   --accent-red-clr: #DB0032;
   --primary-text-clr: #262626;
   --secondary-text-clr: #5B5B5B;
-  --card-bg-clr: #FFF9F3;
-  --card-bg-clr-hover: #FFEAD4;
+  --block-bg-clr: #FFF9F3;
+  --block-bg-clr-hover: #FFEAD4;
 
   /* ==== UTILS ==== */
   --container-gutter: 1rem;
@@ -49,6 +49,7 @@ body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
   min-height: 100%;
@@ -69,8 +70,35 @@ a {
   text-decoration: none;
 }
 
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  background-color: currentColor;
+  transition-property: color, transform, opacity;
+  transition-duration:  0.6s;
+  transition-timing-function: var(--agency-bezier);
+}
+
+@media (hover: hover) {
+  .link:hover::after {
+    opacity: 1;
+    transform: translateY(3px);
+  }
+}
+
 button {
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 h1,
@@ -94,6 +122,12 @@ section:last-child {
   font-size: 42px;
   font-weight: 600;
   line-height: 110%;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  font-weight: 500;
+  line-height: 135%;
 }
 
 img {
@@ -111,4 +145,10 @@ ul {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+@media (min-width: 1280px) {
+  body {
+    font-size: 16px;
+  }
 }

@@ -12,7 +12,7 @@
     z-index: 10;
 
     border-radius: var(--pill);
-    background-color: var(--card-bg-clr);
+    background-color: var(--block-bg-clr);
     box-shadow: 0 4px 5px 1px rgba(39, 38, 37, 0.12);
 }
 
@@ -50,19 +50,9 @@
     font-size: 14px;
     font-weight: 600;
     color: #484848;
-    transition: opacity 0.15s var(--apple-bezier);
-}
-
-.list_link:hover {
-    opacity: 0.75;
 }
 
 .phone_link {
     font-weight: 600;
     color: #484848;
-    transition: opacity 0.15s var(--apple-bezier);
-}
-
-.phone_link:hover {
-    opacity: 0.75;
 }
