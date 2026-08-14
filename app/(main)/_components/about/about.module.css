@@ -1,0 +1,18 @@
+.about_inner {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+
+.about_list {
+    display: grid;
+    row-gap: 90px;
+}
+
+.item_title {
+    font-size: 28px;
+    line-height: 1.1;
+    color: var(--primary-text-clr);
+    margin-bottom: 8px;
+}
