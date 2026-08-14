@@ -33,12 +33,12 @@
 .recipe {
   display: grid;
   padding: 8px;
-  background-color: var(--card-bg-clr);
+  background-color: var(--block-bg-clr);
   transition: background-color 0.3s var(--apple-bezier);
 }
 
 .recipe:hover {
-  background-color: var(--card-bg-clr-hover);
+  background-color: var(--block-bg-clr-hover);
 }
 
 .recipe_body {
