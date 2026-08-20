@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Alumni_Sans, Inter } from 'next/font/google'
-import Header from './shared/components/header/Header'
-import Footer from './shared/components/footer/Footer'
+import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
 import './styles/globals.css'
 
 const inter = Inter({

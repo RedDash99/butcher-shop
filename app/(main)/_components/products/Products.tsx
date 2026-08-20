@@ -4,10 +4,10 @@ import Container from '@/components/container/Container'
 import CTA from '@/components/CTA/CTA'
 import { formatPrice } from '@/lib/utils'
 import { getAllProducts } from '@/lib/products'
-import styles from './productsSection.module.css'
+import styles from './products.module.css'
 
-export default async function ProductsSection() {
-  const products = getAllProducts()
+export default async function Products() {
+  const products = getAllProducts().slice(0, 3)
 
   return (
     <section className={styles.products}>

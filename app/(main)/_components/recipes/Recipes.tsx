@@ -22,7 +22,7 @@ export default function Recipes() {
             </p>
           </div>
           <div className={styles.products_header_right}>
-            <Link href="/recipes" className={styles.products_header_link}>
+            <Link href="/recipes" className={`${styles.products_header_link} link`}>
               Все рецепты
             </Link>
           </div>

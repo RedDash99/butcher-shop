@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation'
-import { getProductSlugs, getProductBySlug } from '../../lib/products'
 import Image from 'next/image'
-import Container from '@/app/shared/components/container/Container'
+import Link from 'next/link'
+import { getProductSlugs, getProductBySlug } from '@/lib/products'
+import Container from '@/components/container/Container'
 import type { Metadata } from 'next'
+import styles from './page.module.css'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -64,32 +66,41 @@ export default async function ProductPage({ params }: Props) {
   }
 
   return (
-    <main
-      style={{
-        maxWidth: '800px',
-        margin: '0 auto',
-        padding: '2rem 1rem',
-      }}
-    >
-      {/* Back button */}
-      <a
-        href="/"
-        style={{
-          display: 'inline-block',
-          marginBottom: '2rem',
-          color: '#3b82f6',
-          textDecoration: 'none',
-        }}
-      >
-        ← Back to products
-      </a>
+    <main>
       <Container>
-        <Image
-          src={`/images/products/${product.preview}`}
-          width={340}
-          height={235}
-          alt={product.title}
-        />
+        <Link href="/" className={styles.link_back}>
+          <svg
+            width="11"
+            height="20"
+            viewBox="0 0 11 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Стрелка назад</title>
+            <g clipPath="url(#clip0_47_81)">
+              <path d="M10 19L6 14L1 10L6 6L10 1" stroke="#98989D" />
+            </g>
+            <defs>
+              <clipPath id="clip0_47_81">
+                <rect width="11" height="20" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          Продукты
+        </Link>
+        <div className={styles.content}>
+          <div className={styles.content_preview}>
+            <Image
+              src={`/images/products/${product.preview}`}
+              width={340}
+              height={248}
+              alt={product.title}
+            />
+          </div>
+          <div className={styles.content_body}>
+            <h1>{product.title}</h1>
+          </div>
+        </div>
       </Container>
     </main>
   )
