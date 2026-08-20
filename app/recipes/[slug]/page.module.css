@@ -1,0 +1,46 @@
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 4px;
+  margin-bottom: 1.5rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondary-text-clr);
+}
+
+.article {
+  margin-top: 1rem;
+}
+
+@media (min-width: 576px) {
+  .page {
+    padding: 0 1.5rem;
+  }
+
+  .breadcrumbs {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 2rem;
+  }
+
+  .article {
+    margin-top: 2rem;
+  }
+}

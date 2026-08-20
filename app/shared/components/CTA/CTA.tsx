@@ -8,7 +8,7 @@ export default function CTA() {
     <Container>
       <div className={styles.cta}>
         <span className={styles.text}>Звоните, чтобы заказать</span>
-        <a href={PHONE_HREF} className={styles.button}>
+        <a href={PHONE_HREF} className={`button ${styles.button}`}>
           {PHONE}
         </a>
         <Image

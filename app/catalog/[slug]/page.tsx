@@ -80,21 +80,21 @@ export default async function ProductPage({ params }: Props) {
                 src={`/images/products/${product.preview}`}
                 alt={product.title}
                 fill
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 530px, (min-width: 768px) 50vw, 100vw"
                 className={styles.preview_image}
               />
             )}
           </div>
 
           <div className={styles.body}>
-            <h1 className={styles.title}>{product.title}</h1>
+            <h1 className="page-title">{product.title}</h1>
 
             <p className={styles.meta}>
               {formatPrice(product.price)}
               {product.weight ? ` · ${product.weight}` : ''}
             </p>
 
-            {description && <p className={styles.description}>{description}</p>}
+            {description && <p className="text-secondary">{description}</p>}
 
             {hasNutrition && (
               <>
@@ -127,7 +127,7 @@ export default async function ProductPage({ params }: Props) {
               </>
             )}
 
-            <a href={PHONE_HREF} className={styles.order}>
+            <a href={PHONE_HREF} className={`button ${styles.order}`}>
               Заказать · {PHONE}
             </a>
           </div>

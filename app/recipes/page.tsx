@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/container/Container'
 import CTA from '@/components/CTA/CTA'
-import { buildPageTitle } from '../lib/utils'
+import { buildPageTitle } from '@/lib/utils'
 import { getAllRecipes } from '@/lib/recipes'
 import type { Metadata } from 'next'
 import styles from './page.module.css'
@@ -17,87 +17,48 @@ export default async function RecipesPage() {
 
   return (
     <main>
-      <section className={styles.products}>
+      <section>
         <Container>
-          <div className={styles.products_header}>
-            <div className={styles.products_header_left}>
-              <h2 className={`${styles.section_title} section-title`}>Рецепты шашлыка</h2>
-              <p className={`${styles.section_description} section-description`}>
-                На майские праздники десятки тысяч россиян отправятся на первые пикники в этом году.
-                И конечно, главным блюдом на столах станет шашлык. РБК Life рассказывает, как можно
-                приготовить мясо — от способа из СССР до необычных маринадов на гранатовом соке и с
-                протертыми томатами.
-              </p>
-            </div>
+          <div className={styles.header}>
+            <h1 className="page-title">Рецепты шашлыка</h1>
+            <p className="section-description">
+              На майские праздники десятки тысяч россиян отправятся на первые пикники в этом году.
+              И конечно, главным блюдом на столах станет шашлык. РБК Life рассказывает, как можно
+              приготовить мясо — от способа из СССР до необычных маринадов на гранатовом соке и с
+              протертыми томатами.
+            </p>
           </div>
 
-          <div className={styles.products_grid}>
+          <div className={styles.grid}>
             {recipes.map((recipe) => (
-              <Link key={recipe.slug} href={`/recipes/${recipe.slug}`} style={{ display: 'flex' }}>
-                <div className={styles.product}>
+              <Link key={recipe.slug} href={`/recipes/${recipe.slug}`} className={styles.card_link}>
+                <article className={`card ${styles.recipe}`}>
                   {recipe.preview && (
-                    <div
-                      style={{
-                        width: '100%',
-                        height: '248px',
-                        backgroundColor: '#f3f4f6',
-                      }}
-                    >
+                    <div className={styles.preview}>
                       <Image
                         src={`/images/recipes/${recipe.preview}`}
                         alt={recipe.title}
-                        width={340}
-                        height={248}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                        }}
+                        fill
+                        sizes="(min-width: 1280px) 360px, (min-width: 1024px) 33vw, (min-width: 576px) 50vw, 100vw"
+                        className={styles.preview_image}
                       />
                     </div>
                   )}
 
-                  <div style={{ padding: '1rem' }}>
-                    <h2
-                      style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '600',
-                        marginBottom: '1rem',
-                        color: '#262626',
-                      }}
-                    >
-                      {recipe.title}
-                    </h2>
+                  <div className={styles.body}>
+                    <h2 className={styles.title}>{recipe.title}</h2>
 
-                    {recipe.description && (
-                      <p
-                        style={{
-                          color: '#4b5563',
-                          fontSize: '0.875rem',
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden',
-                          marginBottom: '0.5rem',
-                        }}
-                      >
-                        {recipe.description}
-                      </p>
-                    )}
+                    {recipe.description ? (
+                      <p className={`text-secondary ${styles.description}`}>{recipe.description}</p>
+                    ) : null}
 
-                    {recipe.date && (
-                      <p
-                        style={{
-                          color: '#9ca3af',
-                          fontSize: '0.75rem',
-                          marginTop: '0.5rem',
-                        }}
-                      >
-                        {new Date(recipe.date).toLocaleDateString()}
+                    {recipe.date ? (
+                      <p className={styles.date}>
+                        {new Date(recipe.date).toLocaleDateString('ru-RU')}
                       </p>
-                    )}
+                    ) : null}
                   </div>
-                </div>
+                </article>
               </Link>
             ))}
           </div>
