@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Container from '../container/Container'
+import { PHONE, PHONE_HREF } from '@/lib/const'
 import styles from './cta.module.css'
 
 export default function CTA() {
@@ -7,8 +8,8 @@ export default function CTA() {
     <Container>
       <div className={styles.cta}>
         <span className={styles.text}>Звоните, чтобы заказать</span>
-        <a href="tel:+79996299386" className={styles.button}>
-          +7 (999) 629-93-86
+        <a href={PHONE_HREF} className={styles.button}>
+          {PHONE}
         </a>
         <Image
           className={styles.arrow_image}

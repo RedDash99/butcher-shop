@@ -9,6 +9,11 @@ export interface Product {
   preview?: string
   price: number
   weight: string
+  protein?: number
+  fat?: number
+  calories?: number
+  caloriesKj?: number
+  content?: string
 }
 
 const productsDirectory = path.join(process.cwd(), 'public/content/products')
@@ -59,7 +64,7 @@ export function getProductBySlug(slug: string): Product | null {
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data } = matter(fileContents)
+  const { data, content } = matter(fileContents)
 
   return {
     slug,
@@ -69,5 +74,6 @@ export function getProductBySlug(slug: string): Product | null {
     price: data.price || 0,
     weight: data.weight || '',
     ...data,
+    content,
   }
 }

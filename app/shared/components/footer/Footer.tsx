@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Container from '../container/Container'
+import { MAPS_URL, PHONE, PHONE_HREF } from '@/lib/const'
 import styles from './footer.module.css'
 
 export default function Footer() {
@@ -30,8 +31,8 @@ export default function Footer() {
             </p>
           </div>
           <div className={styles.footer_right}>
-            <a className={`${styles.phone} link`} href="tel:+79996299386">+7 (999) 629-93-86</a>
-            <a className={`${styles.maps} link`} href="https://yandex.ru/maps/-/CTcm50yq">Мы на Яндекс Картах</a>
+            <a className={`${styles.phone} link`} href={PHONE_HREF}>{PHONE}</a>
+            <a className={`${styles.maps} link`} href={MAPS_URL}>Мы на Яндекс Картах</a>
             <p className={styles.author}>Разработка сайтов <a className="link" href="https://t.me/iNeverBeenInParistps://t.me:@NeverBeenInParis">@NeverBeenInParis</a></p>
           </div>
         </div>

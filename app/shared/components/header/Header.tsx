@@ -1,6 +1,7 @@
 import styles from './header.module.css'
 import Container from '../container/Container'
 import Link from 'next/link'
+import { PHONE, PHONE_HREF } from '@/lib/const'
 
 export default function Header() {
   return (
@@ -37,7 +38,7 @@ export default function Header() {
                     </ul>
                 </nav>
                 <div className={styles.phone}>
-                    <a href="tel:+79996299386" className={`${styles.phone_link} link`}>+7 (999) 629-93-86</a>
+                    <a href={PHONE_HREF} className={`${styles.phone_link} link`}>{PHONE}</a>
                 </div>
             </div>
         </Container>
