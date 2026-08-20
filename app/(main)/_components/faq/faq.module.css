@@ -21,11 +21,14 @@
 }
 
 .item_question {
-  font-size: 15px;
-  line-height: 135%;
+  font-family: var(--font-alumni-sans), sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--primary-text-clr);
   width: 100%;
   padding: 10px 16px;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +57,9 @@
 }
 
 .item_answer p {
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--secondary-text-clr);
   padding: 0 16px 16px;
 }
@@ -83,8 +88,8 @@
   }
 
   .item_question {
-    font-size: 18px;
-    padding: 24px 40px;
+    font-size: 24px;
+    padding: 24px 32px;
   }
 
   .item_button {
@@ -92,7 +97,7 @@
   }
 
   .item_answer p {
-    font-size: 14px;
-    padding: 0 40px 24px;
+    font-size: 15px;
+    padding: 0 32px 24px;
   }
 }

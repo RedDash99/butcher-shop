@@ -3,6 +3,7 @@ import Recipes from './_components/recipes/Recipes'
 import Hero from './_components/hero/Hero'
 import About from './_components/about/About'
 import Faq from './_components/faq/Faq'
+import Contacts from './_components/contacts/Contacts'
 import styles from './page.module.css'
 
 export default async function HomePage() {
@@ -12,6 +13,7 @@ export default async function HomePage() {
       <Products />
       <About />
       <Recipes />
+      <Contacts />
       <Faq />
     </main>
   )

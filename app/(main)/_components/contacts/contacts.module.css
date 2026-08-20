@@ -1,0 +1,89 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  padding: 8px;
+  background-color: var(--block-bg-clr);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card .body {
+  padding: 20px 16px 28px;
+}
+
+.body :global(.section-title) {
+  margin-bottom: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item_title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--primary-text-clr);
+}
+
+.item_value {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--secondary-text-clr);
+  text-transform: none;
+}
+
+.maps_link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+}
+
+.image {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.image_photo {
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .card .body {
+    flex-shrink: 0;
+    padding: 20px 32px 28px;
+  }
+
+  .body {
+    flex-shrink: 0;
+  }
+
+  .image {
+    flex: 1 0 0;
+    min-width: 0;
+    min-height: auto;
+  }
+}
