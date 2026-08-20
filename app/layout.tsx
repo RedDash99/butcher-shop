@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Alumni_Sans, Inter } from 'next/font/google'
+import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
 import './styles/globals.css'
 
 const inter = Inter({
@@ -22,7 +24,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="ru" className={`${inter.variable} ${alumniSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="page-wrapper">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

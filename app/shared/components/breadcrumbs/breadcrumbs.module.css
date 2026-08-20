@@ -1,0 +1,6 @@
+.breadcrumbs_list {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 1.5rem;
+}

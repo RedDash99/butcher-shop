@@ -2,6 +2,11 @@
   "name": "butcher-shop",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Пестрецов Александр",
+    "email": "Pestretzov.Alecksandr2016@yandex.ru",
+    "url": "https://t.me/iNeverBeenInParis"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +15,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "dompurify": "^3.4.13",
     "gray-matter": "^4.0.3",
     "isomorphic-dompurify": "^3.19.0",
@@ -24,7 +30,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "sass": "^1.102.0",
     "typescript": "^5"
   }
 }

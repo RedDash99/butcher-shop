@@ -1,0 +1,50 @@
+.footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.footer_inner {
+    padding: 24px;
+    margin-bottom: 1.5rem;
+    background-color: var(--block-bg-clr);
+    display: flex;
+    justify-content: space-between;
+}
+
+.slogan {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--secondary-text-clr);
+    margin-top: 1rem;
+    max-width: 400px;
+}
+
+.footer_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 8px;
+}
+
+.phone,
+.maps {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text-clr);
+}
+
+.maps {
+    text-transform: none;
+}
+
+.author {
+    margin-top: auto;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.author a {
+    color: var(--accent-red-clr);
+    font-weight: 600;
+}
