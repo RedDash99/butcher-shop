@@ -15,11 +15,13 @@ type ContactsContentProps = {
   titleAs?: 'h1' | 'h2'
 }
 
-export function ContactsContent({ variant = 'card', titleAs: Title = 'h2' }: ContactsContentProps) {
+export function ContactsContent({ variant = 'card', titleAs = 'h2' }: ContactsContentProps) {
+  const Title = titleAs
+
   return (
     <div className={`${styles.layout} ${variant === 'card' ? styles.card : ''}`}>
       <div className={styles.body}>
-        <Title className="section-title">Контакты</Title>
+        <Title className={titleAs === 'h1' ? 'page-title' : 'section-title'}>Контакты</Title>
         <div className={styles.list}>
           <div className={styles.item}>
             <h3 className={styles.item_title}>Адрес</h3>
@@ -27,7 +29,7 @@ export function ContactsContent({ variant = 'card', titleAs: Title = 'h2' }: Con
           </div>
           <div className={styles.item}>
             <h3 className={styles.item_title}>Телефон</h3>
-            <a href={PHONE_HREF} className={styles.item_value}>
+            <a href={PHONE_HREF} className={`${styles.item_value} link`}>
               {PHONE}
             </a>
           </div>

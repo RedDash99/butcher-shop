@@ -1,10 +1,11 @@
 .layout {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1.25rem;
 }
 
 .card {
+  gap: 8px;
   padding: 8px;
   background-color: var(--block-bg-clr);
 }
@@ -16,17 +17,18 @@
 }
 
 .card .body {
-  padding: 20px 16px 28px;
+  padding: 16px 12px 20px;
 }
 
-.body :global(.section-title) {
+.body :global(.section-title),
+.body :global(.page-title) {
   margin-bottom: 0;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .item {
@@ -36,14 +38,14 @@
 }
 
 .item_title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 1.1;
   color: var(--primary-text-clr);
 }
 
 .item_value {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
   color: var(--secondary-text-clr);
@@ -58,7 +60,8 @@
 
 .image {
   position: relative;
-  min-height: 240px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -66,24 +69,58 @@
   object-fit: cover;
 }
 
+@media (min-width: 576px) {
+  .card .body {
+    padding: 20px 16px 28px;
+  }
+
+  .item_title {
+    font-size: 24px;
+  }
+
+  .item_value {
+    font-size: 16px;
+  }
+
+  .list {
+    gap: 24px;
+  }
+}
+
 @media (min-width: 768px) {
   .layout {
     flex-direction: row;
     align-items: stretch;
+    gap: 2rem;
   }
 
-  .card .body {
-    flex-shrink: 0;
-    padding: 20px 32px 28px;
+  .card {
+    gap: 8px;
   }
 
   .body {
-    flex-shrink: 0;
+    flex: 0 1 320px;
+  }
+
+  .card .body {
+    flex: 0 0 auto;
+    padding: 20px 32px 28px;
   }
 
   .image {
-    flex: 1 0 0;
+    flex: 1 1 0;
+    aspect-ratio: auto;
     min-width: 0;
-    min-height: auto;
+    min-height: 280px;
+  }
+
+  .item_value {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .body {
+    flex-basis: 360px;
   }
 }
