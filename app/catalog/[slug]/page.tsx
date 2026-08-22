@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { getProductSlugs, getProductBySlug } from '@/lib/products'
 import { formatPrice, buildPageTitle } from '@/lib/utils'
 import { PHONE, PHONE_HREF } from '@/lib/const'
 import Container from '@/components/container/Container'
+import CoverImage from '@/components/coverImage/CoverImage'
 import type { Metadata } from 'next'
 import styles from './page.module.css'
 
@@ -14,7 +14,7 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  const slugs = getProductSlugs()
+  const slugs = await getProductSlugs()
   return slugs.map(({ slug }) => ({
     slug: slug,
   }))
@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const product = getProductBySlug(slug)
+  const product = await getProductBySlug(slug)
 
   if (!product) {
     return {
@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const description = product.description || product.title
+  const images = product.preview ? [product.preview.url] : []
 
   return {
     title: buildPageTitle(product.title),
@@ -38,27 +39,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: product.title,
       description,
-      images: product.preview ? [`/images/products/${product.preview}`] : [],
+      images,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: product.title,
       description,
-      images: product.preview ? [`/images/products/${product.preview}`] : [],
+      images,
     },
   }
 }
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params
-  const product = getProductBySlug(slug)
+  const product = await getProductBySlug(slug)
 
   if (!product) {
     notFound()
   }
 
-  const description = product.content?.trim() || product.description
+  const description = product.content || product.description
   const hasNutrition =
     product.protein != null || product.fat != null || product.calories != null
 
@@ -76,12 +77,11 @@ export default async function ProductPage({ params }: Props) {
         <div className={styles.content}>
           <div className={styles.preview}>
             {product.preview && (
-              <Image
-                src={`/images/products/${product.preview}`}
-                alt={product.title}
-                fill
+              <CoverImage
+                image={product.preview}
                 sizes="(min-width: 1280px) 530px, (min-width: 768px) 50vw, 100vw"
                 className={styles.preview_image}
+                priority
               />
             )}
           </div>

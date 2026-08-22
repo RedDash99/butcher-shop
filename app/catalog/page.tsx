@@ -1,13 +1,13 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/container/Container'
+import CoverImage from '@/components/coverImage/CoverImage'
 import CTA from '@/components/CTA/CTA'
 import { formatPrice } from '@/lib/utils'
 import { getAllProducts } from '@/lib/products'
 import styles from './page.module.css'
 
 export default async function ProductsPage() {
-  const products = getAllProducts()
+  const products = await getAllProducts()
 
   return (
     <main>
@@ -27,10 +27,8 @@ export default async function ProductsPage() {
                 <article className={`card ${styles.product}`}>
                   {product.preview && (
                     <div className={styles.preview}>
-                      <Image
-                        src={`/images/products/${product.preview}`}
-                        alt={product.title}
-                        fill
+                      <CoverImage
+                        image={product.preview}
                         sizes="(min-width: 1280px) 360px, (min-width: 1024px) 33vw, (min-width: 576px) 50vw, 100vw"
                         className={styles.preview_image}
                       />
