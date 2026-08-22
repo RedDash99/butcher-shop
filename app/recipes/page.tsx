@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/container/Container'
+import CoverImage from '@/components/coverImage/CoverImage'
 import CTA from '@/components/CTA/CTA'
 import { buildPageTitle } from '@/lib/utils'
 import { getAllRecipes } from '@/lib/recipes'
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default async function RecipesPage() {
-  const recipes = getAllRecipes()
+  const recipes = await getAllRecipes()
 
   return (
     <main>
@@ -35,10 +35,8 @@ export default async function RecipesPage() {
                 <article className={`card ${styles.recipe}`}>
                   {recipe.preview && (
                     <div className={styles.preview}>
-                      <Image
-                        src={`/images/recipes/${recipe.preview}`}
-                        alt={recipe.title}
-                        fill
+                      <CoverImage
+                        image={recipe.preview}
                         sizes="(min-width: 1280px) 360px, (min-width: 1024px) 33vw, (min-width: 576px) 50vw, 100vw"
                         className={styles.preview_image}
                       />
@@ -52,9 +50,9 @@ export default async function RecipesPage() {
                       <p className={`text-secondary ${styles.description}`}>{recipe.description}</p>
                     ) : null}
 
-                    {recipe.date ? (
+                    {recipe.publishedAt ? (
                       <p className={styles.date}>
-                        {new Date(recipe.date).toLocaleDateString('ru-RU')}
+                        {new Date(recipe.publishedAt).toLocaleDateString('ru-RU')}
                       </p>
                     ) : null}
                   </div>

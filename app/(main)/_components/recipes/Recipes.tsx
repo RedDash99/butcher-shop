@@ -1,12 +1,12 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/container/Container'
+import CoverImage from '@/components/coverImage/CoverImage'
 import CTA from '@/components/CTA/CTA'
 import { getAllRecipes } from '@/lib/recipes'
 import styles from './recipes.module.css'
 
-export default function Recipes() {
-  const recipes = getAllRecipes().slice(0, 3)
+export default async function Recipes() {
+  const recipes = (await getAllRecipes()).slice(0, 3)
 
   return (
     <section>
@@ -32,10 +32,8 @@ export default function Recipes() {
               <article className={`card ${styles.recipe}`}>
                 {recipe.preview && (
                   <div className={styles.preview}>
-                    <Image
-                      src={`/images/recipes/${recipe.preview}`}
-                      alt={recipe.title}
-                      fill
+                    <CoverImage
+                      image={recipe.preview}
                       sizes="(min-width: 1280px) 360px, (min-width: 1024px) 33vw, (min-width: 576px) 50vw, 100vw"
                       className={styles.preview_image}
                     />
