@@ -9,10 +9,10 @@ export default async function Hero() {
       <Container>
         <div className={styles.hero_inner}>
           <div className={styles.hero_content}>
-            <h1 className={styles.hero_title}>Мясная лавка</h1>
+            <h1 className={styles.hero_title}>Свежее мясо с домашних ферм</h1>
             <p className={`${styles.hero_description} section-description`}>
-              Натуральная продукция с собственных ферм без гормонов и добавок. Доставляем свежее
-              мясо за 2 часа, чтобы ваш ужин был безупречным.
+              Отборное мясо и мясные продукты от домашних фермерских хозяйств. Поможем выбрать
+              подходящий отруб для семейного ужина, шашлыка или праздничного стола.
             </p>
             <div className={styles.cta}>
               <Link href="/catalog" className={`button ${styles.button}`}>
@@ -32,7 +32,7 @@ export default async function Hero() {
               src="/images/hero.jpg"
               width={518}
               height={450}
-              alt=""
+              alt="Свежее фермерское мясо в мясной лавке"
               className={styles.hero_photo}
             />
           </div>

@@ -13,12 +13,10 @@ export default async function Recipes() {
       <Container>
         <div className={styles.header}>
           <div className={styles.header_text}>
-            <h2 className="section-title">Рецепты шашлыка</h2>
+            <h2 className="section-title">Рецепты из мяса</h2>
             <p className="section-description">
-              На майские праздники десятки тысяч россиян отправятся на первые пикники в этом году. И
-              конечно, главным блюдом на столах станет шашлык. РБК Life рассказывает, как можно
-              приготовить мясо — от способа из СССР до необычных маринадов на гранатовом соке и с
-              протертыми томатами.
+              Простые идеи для домашнего ужина и праздничного стола: как приготовить сочный стейк,
+              замариновать шашлык, запечь мясо или сварить насыщенный бульон.
             </p>
           </div>
           <Link href="/recipes" className={`${styles.header_link} link`}>

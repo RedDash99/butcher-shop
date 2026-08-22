@@ -14,10 +14,10 @@ export default async function Products() {
       <Container>
         <div className={styles.header}>
           <div className={styles.header_text}>
-            <h2 className="section-title">Продукция</h2>
+            <h2 className="section-title">Мясо и мясные продукты</h2>
             <p className="section-description">
-              От стейков на гриль до бульонных косточек — у нас найдётся мясо на любой бюджет и
-              рецепт. Выбирайте вес, вид разделки и способ упаковки прямо на сайте.
+              В ассортименте — мясо для стейков, запекания, шашлыка, фарша и наваристого бульона.
+              Выбирайте нужный отруб и вес, а мы подготовим и аккуратно упакуем заказ.
             </p>
           </div>
           <Link href="/catalog" className={`${styles.header_link} link`}>
